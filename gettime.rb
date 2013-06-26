@@ -1,12 +1,17 @@
-# encoding: utf-8
+#! /usr/local/bin/ruby -s
+## encoding: utf-8
 
 require 'socket'
 
-server, port = ARGV
 
-port =13 if port.nil?
+sever= $url if $HOST
+port= $daytime if $PORT
 
+puts server
+puts port 
+puts "___________________"
 def get_time_from server, port=13
+	puts "getting datetime  from #{server} on port #{port}..."
   time_server =  TCPSocket.open server, port
   puts "response from #{server} is:".upcase.center(72)
   while resp = time_server.gets
@@ -39,7 +44,7 @@ if server.nil?
   %{#{
   Obfuscation= Class.new do;
   define_method :method_missing do |method, *arg, &block|;
-   return "#{puts 'CHUCK NORRIS says:'+ method.to_s}"  unless method =~ /^catch_me*/;
+   return "#{puts 'CHUCK NORRIS says: '+ method.to_s}"  unless method =~ /^catch_me*/;
    #super(method,*arg,&block) unless method =~ /^catch_me*/;
    ntp_servers = available_time_servers.split;
    print ntp_servers;
@@ -58,7 +63,6 @@ if server.nil?
    puts 'WARN: TYPED %d PLEASE CHOOSE VALUE BETWEEN 1 AND %d' %[choice,count];
    choice = gets.chomp.to_i;
    end;
-   puts 'getting datetime  from '<< ntp_servers[choice-1] <<' ...';
    get_time_from ntp_servers[choice-1], port;
   end;
  end;
