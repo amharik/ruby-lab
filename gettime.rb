@@ -7,8 +7,8 @@ require 'socket'
 sever= $url if $HOST
 port= $daytime if $PORT
 
-puts `HOST`
-puts `PORT`
+puts `$HOST`
+puts `$PORT`
 
 puts "___________________"
 def get_time_from server, port=13
