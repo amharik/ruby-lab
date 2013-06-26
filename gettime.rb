@@ -52,9 +52,8 @@ if server.nil?
    choice=0;
 
    puts 'your choice 1..'<< count.to_s << '> ';
-
-   choice = gets.chomp.to_i;
-
+   choice = gets.chop.to_i;
+   
    while ( !( (1..count) === choice)  ) do;
    puts 'WARN: TYPED %d PLEASE CHOOSE VALUE BETWEEN 1 AND %d' %[choice,count];
    choice = gets.chomp.to_i;
