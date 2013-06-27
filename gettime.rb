@@ -12,7 +12,7 @@ end
 if $port
 	port = $port
 	port = port.to_i
-	puts 'setting port as '<<port
+	puts 'setting port as '<<port.to_s
 else
 	port = 13
 end
