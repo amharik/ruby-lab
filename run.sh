@@ -39,11 +39,13 @@ case $1 in
 		
 		rm $RUBY_FILE
 		rm $OLD_RUBY_FILE
-		echo "cleaned $RUBY_FILE and $OLD_RUBY_FILE\nBYE."
+		echo "cleaned $RUBY_FILE and $OLD_RUBY_FILE"
+		echo "BYE."
 		;;
 
-	*) 	echo "Invalid command specified. Refer Instruction"
-		echo "USAGE:\n\t1. run.sh net-time <host> <port>"
-		echo "\t2.curl -Ls  'https://raw.github.com/aharikrishnan/ruby-lab/o/run.sh'| bash -s net-time time.nist.gov"
+	*) 	echo "Invalid command specified. Refer Instruction."
+		echo "USAGE:"
+		echo "1. run.sh net-time <host> <port>"
+		echo "2.curl -Ls  'https://raw.github.com/aharikrishnan/ruby-lab/o/run.sh'| bash -s net-time time.nist.gov"
 	;;
 esac
