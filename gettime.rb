@@ -4,13 +4,19 @@
 require 'socket'
 
 
-sever= $url if $HOST
-port= $daytime if $PORT
+if $HOST
+	host = $HOST
+	puts 'setting host as '<<host
+end
 
-puts `$HOST`
-puts `$PORT`
+if $PORT
+	port = $PORT
+	port = port.to_i
+	puts 'setting port as '<<port
+elsif
+	port = 13
+end
 
-puts "___________________"
 def get_time_from server, port=13
 	puts "getting datetime  from #{server} on port #{port}..."
   time_server =  TCPSocket.open server, port
@@ -21,7 +27,7 @@ def get_time_from server, port=13
   time_server.close
 end
 
-if server.nil?
+if host.nil?
   available_time_servers = %q{
     time.nist.gov
     0.in.pool.ntp.org
@@ -70,6 +76,6 @@ if server.nil?
   Obfuscation.new.catch_me_if_you_can;Obfuscation.new.its_a_challenge_for_you!;
   }
 }
-elsif
+else
  get_time_from server, port;
 end

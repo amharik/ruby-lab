@@ -15,10 +15,13 @@ case $1 in
 		echo "connecting to: $RUBY_SCRIPT"
 		if [ "x$2" != "x" ]; then
 			if [ "x$3" != "x" ]; then
-				HOST=$2	
-				PORT=$3
-				wget $FLAGS $RUBY_SCRIPT | ruby
-				#wget $FLAGS $RUBY_SCRIPT >/tmp/ins.rb
+				RUBY_FILE=`tempfile`
+				export HOST= "$2"
+				export PORT= "$3"
+				#wget $FLAGS $RUBY_SCRIPT | ruby
+				wget $FLAGS $RUBY_SCRIPT > $RUBY_FILE
+				echo "created a temporary file $RUBY_FILE"
+				ruby "$RUBY_FILE"
 				#ruby /tmp/ins.rb -url="afafa" -daytime="13"
 			fi
 		fi
