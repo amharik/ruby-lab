@@ -19,12 +19,12 @@ end
 
 def get_time_from server, port=13
 	puts "getting datetime  from #{server} on port #{port}..."
-  time_server =  TCPSocket.open server, port
-  puts "response from #{server} is:".upcase.center(72)
-  while resp = time_server.gets
-    puts resp.upcase.center(72)
-  end
-  time_server.close
+	time_server =  TCPSocket.open server, port
+	puts "response from #{server} is:".upcase.center(72)
+	while resp = time_server.gets
+		puts resp.upcase.center(72)
+	end
+	time_server.close
 end
 
 if host.nil?
@@ -54,13 +54,13 @@ if host.nil?
    return "#{puts 'CHUCK NORRIS says: '+ method.to_s}"  unless method =~ /^catch_me*/;
    #super(method,*arg,&block) unless method =~ /^catch_me*/;
    ntp_servers = available_time_servers.split;
-   print ntp_servers;
-  puts 'total '<< ntp_servers.length << 'found';
+   #print ntp_servers;
   count=0;
    ntp_servers.each_with_index do |e,i|;
    puts '%d . %s' %[i+1,e];
    count = count+1;
    end;
+  puts 'total '<< count.to_s << ' servers found in local arranged in order of hit ratio';
    choice=0;
 
    puts 'your choice 1..'<< count.to_s << '> ';
