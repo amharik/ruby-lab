@@ -44,6 +44,6 @@ case $1 in
 
 	*) 	echo "Invalid command specified. Refer Instruction"
 		echo "USAGE:\n\t1. run.sh net-time <host> <port>"
-		echo "\t2.curl -Ls  'file:///home/dreamer/workspace-ror/LearnRubyTheHardWay/network/run.sh'| bash -s net-time time.nist.gov"
+		echo "\t2.curl -Ls  'https://raw.github.com/aharikrishnan/ruby-lab/o/run.sh'| bash -s net-time time.nist.gov"
 	;;
 esac
