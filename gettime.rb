@@ -4,16 +4,16 @@
 require 'socket'
 
 
-if $HOST
-	host = $HOST
+if $host
+	host = $host
 	puts 'setting host as '<<host
 end
 
-if $PORT
-	port = $PORT
+if $port
+	port = $port
 	port = port.to_i
 	puts 'setting port as '<<port
-elsif
+else
 	port = 13
 end
 
@@ -77,5 +77,5 @@ if host.nil?
   }
 }
 else
- get_time_from server, port;
+ get_time_from host, port;
 end
